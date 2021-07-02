@@ -6,9 +6,9 @@ import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
 import confirmDeleteImg from '../assets/images/confirmDelete.svg';
 
-import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
-import { Question } from '../components/Question';
+import { Button } from '../components/button';
+import { RoomCode } from '../components/roomCode';
+import { Question } from '../components/question';
 
 import '../styles/room.scss';
 

@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
 
-import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
-import { Question } from '../components/Question';
+import { Button } from '../components/button';
+import { RoomCode } from '../components/roomCode';
+import { Question } from '../components/question';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 
@@ -76,7 +76,7 @@ export function Room() {
 
         <form onSubmit={handleSendQuestion}>
           <textarea 
-          placeholder="O que você quer perguntar?"
+          placeholder="O que vocÃª quer perguntar?"
           onChange={event => setNewQuestion(event.target.value)}
           value={newQuestion}
           />
@@ -88,7 +88,7 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faça seu login</button></span>
+              <span>Para enviar uma pergunta, <button>faÃ§a seu login</button></span>
             ) }
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
