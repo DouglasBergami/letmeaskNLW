@@ -1,19 +1,20 @@
 import { useHistory, useParams } from 'react-router-dom';
 
-import logoImg from '../assets/images/logo.svg';
-import deleteImg from '../assets/images/delete.svg';
-import checkImg from '../assets/images/check.svg';
-import answerImg from '../assets/images/answer.svg';
-import confirmDeleteImg from '../assets/images/confirmDelete.svg';
+import logoImg from '../../assets/images/logo.svg';
+import deleteImg from '../../assets/images/delete.svg';
+import checkImg from '../../assets/images/check.svg';
+import answerImg from '../../assets/images/answer.svg';
+import confirmDeleteImg from '../../assets/images/confirmDelete.svg';
 
-import { Button } from '../components/button';
-import { RoomCode } from '../components/roomCode';
-import { Question } from '../components/question';
+import { Button } from '../../components/button';
+import { RoomCode } from '../../components/roomCode';
+import { Question } from '../../components/question';
 
-import '../styles/room.scss';
+import { RoomStyled } from '../room/styles';
+import '../../styles/modal.scss';
 
-import { useRoom } from '../hooks/useRoom';
-import { database } from '../services/firebase';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
 import { useState } from 'react';
 
 import Modal from 'react-modal';
@@ -61,7 +62,7 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <RoomStyled>
       <header>
         <div className="content">
           <img src={logoImg} alt="letmeask"/>
@@ -133,6 +134,6 @@ export function AdminRoom() {
           </div>
         </Modal>
       </main>
-    </div>
+    </RoomStyled>
   )
 }

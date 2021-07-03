@@ -1,17 +1,16 @@
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import logoImg from '../assets/images/logo.svg';
+import logoImg from '../../assets/images/logo.svg';
 
-import { Button } from '../components/button';
-import { RoomCode } from '../components/roomCode';
-import { Question } from '../components/question';
-import { useAuth } from '../hooks/useAuth';
-import { database } from '../services/firebase';
+import { Button } from '../../components/button';
+import { RoomCode } from '../../components/roomCode';
+import { Question } from '../../components/question';
+import { useAuth } from '../../hooks/useAuth';
+import { database } from '../../services/firebase';
 
-import '../styles/room.scss';
-import { useRoom } from '../hooks/useRoom';
-
+import { RoomStyled } from './styles';
+import { useRoom } from '../../hooks/useRoom';
 
 type RoomParams = {
   id: string;
@@ -59,8 +58,9 @@ export function Room() {
     })
     }
   }
+
   return (
-    <div id="page-room">
+    <RoomStyled>
       <header>
         <div className="content">
           <img src={logoImg} alt="letmeask"/>
@@ -76,7 +76,7 @@ export function Room() {
 
         <form onSubmit={handleSendQuestion}>
           <textarea 
-          placeholder="O que vocÃª quer perguntar?"
+          placeholder="O que você quer perguntar?"
           onChange={event => setNewQuestion(event.target.value)}
           value={newQuestion}
           />
@@ -88,7 +88,7 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faÃ§a seu login</button></span>
+              <span>Para enviar uma pergunta, <button>faça seu login</button></span>
             ) }
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
@@ -121,6 +121,6 @@ export function Room() {
           })}
         </div>
       </main>
-    </div>
+    </RoomStyled>
   )
 }
